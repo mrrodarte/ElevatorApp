@@ -18,7 +18,7 @@ Elevator System Application that demonstrates basic elevator functionality using
   - A Minimal API approach with endpoint management and middleware error handling is also in place.
   - The project includes unit testing (XUnit) of basic elevator operations located in the ElevatorSystem.Tests.
     
-# How to run our application
+# How to run the Elevator application
 The application relies on .NET7 run time for Windows Desktops and Core.  File are located in the publish folder or can be downloaded here:
 - Windows Desktop .NET7 run time: https://download.visualstudio.microsoft.com/download/pr/2ce1cbbe-71d1-44e7-8e80-d9ae336b9b17/a2706bca3474eef8ef95e10a12ecc2a4/windowsdesktop-runtime-7.0.11-win-x64.exe
 - .NET Core runtime: https://download.visualstudio.microsoft.com/download/pr/56fbfa65-4bf5-40a0-8935-57f09ab3c76b/d80afe4b74d01c07ca74c4670fcfa1f8/aspnetcore-runtime-7.0.11-win-x64.exe
@@ -31,7 +31,7 @@ Make sure your computer has these runtimes in order to run the application.
     - LogFilePath: Specify the path where your elevator system will log operational data and any potential issues. Ensure the file adheres to the JSON syntax or retain the default settings.
     - ApiUrlHost:  This defines the API host that will listen to requests. The default can be kept, or if you have a preferred port, you can specify it. (Note: This demo uses only HTTP and not a secure protocol, intentionally keeping the application simple.)
 - Launch:
-  After finalizing your settings, initiate ElevatorConsole.exe. This is the entry point for our elevator application. Ensure you launch this and not elevatorAPI.exe. The ElevatorConsole will handle the startup of necessary modules for the elevator's operation.
+  After finalizing your settings, initiate **ElevatorConsole.exe**. This is the entry point for the elevator application. Ensure you launch this and not elevatorAPI.exe. The ElevatorConsole will handle the startup of necessary modules for the elevator's operation.
 
 # Operation
   - The application welcomes you and asks to enter your weight (for simplicity a constant weight will be assumed for all passengers)
