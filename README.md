@@ -18,6 +18,12 @@ Elevator System Application that demonstrates basic elevator functionality using
   - A Minimal API approach with endpoint management and middleware error handling is also in place.
     
 # How to run our application
+The application relies on .NET7 run time for Windows Desktops and Core.  File are located in the publish folder or can be downloaded here:
+- Windows Desktop .NET7 run time: https://download.visualstudio.microsoft.com/download/pr/2ce1cbbe-71d1-44e7-8e80-d9ae336b9b17/a2706bca3474eef8ef95e10a12ecc2a4/windowsdesktop-runtime-7.0.11-win-x64.exe
+- .NET Core runtime: https://download.visualstudio.microsoft.com/download/pr/56fbfa65-4bf5-40a0-8935-57f09ab3c76b/d80afe4b74d01c07ca74c4670fcfa1f8/aspnetcore-runtime-7.0.11-win-x64.exe
+
+Make sure your computer has these runtimes in order to run the application.
+
 - Settings:
     - An initial settings file for the elevator is located in appsettings.json
     - ElevatorSettings: Here, you can define the maximum number of floors for your elevator and its weight capacity by adjusting MaxFloors and MaxWeight. Alternatively, you can retain the default settings.
