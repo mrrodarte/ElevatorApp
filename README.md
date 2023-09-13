@@ -39,12 +39,14 @@ Make sure your computer has these runtimes in order to run the application.
   - Input the floor from which you're making the call and your intended direction (e.g., 5U, 2D). Enter 'Q' to exit.
   - Valid entries for Outside Requests [floor number][Desired Direction]
   - Valid entries for Inside Requests  [floor number]
+  - You can only make Inside Requests when a passenger have boarded the elevator.
+  - If the elevator reaches its maximum weight capacity, only inside requests can be processed. Once passengers have disembarked and the elevator is no longer at maximum weight, it will then accommodate outside requests.
   - Examples:
           - 5U: An outside request from floor 5 intending to go up.
           - 3: An inside request to stop at floor 3. (Direction is contingent on the elevator's current trajectory.)
           - Upon calling the elevator, when it arrives at your floor, you will board automatically.
           - Subsequently, select your destination. Once the destination is reached, you will disembark automatically.
-    
+
           NOTES:  Be informed that a queuing service manages the elevator requests. Immediate responses might not be possible if challenges arise in processing your request (e.g., surpassing the weight limit). Always review the logs for insights and potential troubleshooting.
 
 The application does not offer a console monitor natively to display the status of your request.  But it tries to open an extra cmd window for monitoring operations, depending on your system this might not work and unfortunatelly you would have to rely on looking at the logfile at the end of the operations. You can also use free file monitoring tools that can be used to track your logfile in real-time.
