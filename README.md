@@ -47,5 +47,5 @@ Make sure your computer has these runtimes in order to run the application.
     
           NOTES:  Be informed that a queuing service manages the elevator requests. Immediate responses might not be possible if challenges arise in processing your request (e.g., surpassing the weight limit). Always review the logs for insights and potential troubleshooting.
 
-The application does not offer a console monitor to display the status of your request. Free file monitoring tools can be used to track your logfile, or you can simply open and refresh your log file after an operation to view the activities.
+The application does not offer a console monitor natively to display the status of your request.  But it tries to open an extra cmd window for monitoring operations, depending on your system this might not work and unfortunatelly you would have to rely on looking at the logfile at the end of the operations. You can also use free file monitoring tools that can be used to track your logfile in real-time.
   
