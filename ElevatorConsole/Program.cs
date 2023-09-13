@@ -7,9 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using System.Diagnostics;
 using ElevatorAPI.Services;
 using ElevatorDomain.Interfaces;
-using ElevatorDomain.Services;
 using ElevatorDomain.Models;
-using Microsoft.Extensions.Hosting;
 
 namespace ElevatorConsole
 {
@@ -18,6 +16,7 @@ namespace ElevatorConsole
         //private IQueueingService? _queueService;
 
         private static string ApiUrl = string.Empty;
+        private static string LogFilePath = string.Empty;
         private static string processStatus = string.Empty;
         private static ILoggingService? _loggingService;
 
@@ -25,10 +24,25 @@ namespace ElevatorConsole
         {
             //Read api url from appSettings.json
             var builder = WebApplication.CreateBuilder(args);
-            
+
             ApiUrl = builder.Configuration["ApiUrlHost"] + builder.Configuration["ApiUrl"];
-            _loggingService = new LoggingService(builder.Configuration["LogFilePath"]!);
+            LogFilePath = builder.Configuration["LogFilePath"]!;
+            _loggingService = new LoggingService(LogFilePath);
             var elevatorMaxFloors = builder.Configuration["ElevatorSettings:MaxFloors"]!;
+
+            //I though we needed some kind of minimal monitoring to know what is going on in our elevator
+            //this is just a simple approach.
+            var newWindow = new Process
+            {
+                //StartInfo = new ProcessStartInfo("cmd.exe", $"/K type nul > {LogFilePath} && tail -f {LogFilePath}")
+                StartInfo = new ProcessStartInfo("powershell", $"-command \"Get-Content {LogFilePath} -Wait\"")
+                {
+                    RedirectStandardOutput = false,
+                    UseShellExecute = true,
+                    CreateNoWindow = false
+                }
+            };
+            newWindow.Start();
 
             try
             {
@@ -62,8 +76,6 @@ namespace ElevatorConsole
             //For simplicity requiring less entries between requests we are assuming all passengers will be this set weight
             var Weight = GetValidDoubleInput("What is your aprox weight (sorry for asking this, elevator requirements)");
 
-            //await CheckQueueProcessStatus();
-
             while (true) // or some condition to exit
             {
                 Console.WriteLine($"Make an elevator request: Building floors ([1-{elevatorMaxFloors}][U/D for an outside request])");
@@ -82,15 +94,14 @@ namespace ElevatorConsole
                         if (processStatus != "InProgress")
                         {
                             await _loggingService!.LogEventAsync($"Elevator App exited by user request.");
+                            //await logPollingTask;
+                            newWindow.Kill();
                             Environment.Exit(0);
                         }
                     }
                 }
 
-                //var match = Regex.Match(request, @"(?<number>10|[1-9])(?<direction>[UDud])(?<requesttype>[OIoi])");
-
                 var match = Regex.Match(request, @"^(?:(?<number>10|[1-9])(?<direction>[UDud])|(?<number>10|[1-9]))$");
-
 
                 //initial default values
                 int requestedFloor = 1;
