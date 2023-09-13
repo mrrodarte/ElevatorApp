@@ -31,7 +31,7 @@ Make sure your computer has these runtimes in order to run the application.
     - LogFilePath: Specify the path where your elevator system will log operational data and any potential issues. Ensure the file adheres to the JSON syntax or retain the default settings.
     - ApiUrlHost:  This defines the API host that will listen to requests. The default can be kept, or if you have a preferred port, you can specify it. (Note: This demo uses only HTTP and not a secure protocol, intentionally keeping the application simple.)
 - Launch:
-  After finalizing your settings, initiate **ElevatorConsole.exe**. This is the entry point for the elevator application. Ensure you launch this and not elevatorAPI.exe. The ElevatorConsole will handle the startup of necessary modules for the elevator's operation.
+  After finalizing your settings, initiate `ElevatorConsole.exe`. This is the entry point for the elevator application. Ensure you launch this and not elevatorAPI.exe. The ElevatorConsole will handle the startup of necessary modules for the elevator's operation.
 
 # Operation
   - The application welcomes you and asks to enter your weight (for simplicity a constant weight will be assumed for all passengers)
