@@ -1,0 +1,12 @@
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\ElevatorDomain.deps.json
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\ElevatorDomain.dll
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\ElevatorDomain.pdb
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\ElevatorDomain.csproj.AssemblyReference.cache
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\ElevatorDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\ElevatorDomain.AssemblyInfoInputs.cache
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\ElevatorDomain.AssemblyInfo.cs
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\ElevatorDomain.csproj.CoreCompileInputs.cache
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\ElevatorDomain.dll
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\refint\ElevatorDomain.dll
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\ElevatorDomain.pdb
+C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\obj\Release\net7.0\ref\ElevatorDomain.dll
