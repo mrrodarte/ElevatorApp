@@ -25,9 +25,10 @@ namespace ElevatorConsole
         {
             //Read api url from appSettings.json
             var builder = WebApplication.CreateBuilder(args);
-
+            
             ApiUrl = builder.Configuration["ApiUrlHost"] + builder.Configuration["ApiUrl"];
             _loggingService = new LoggingService(builder.Configuration["LogFilePath"]!);
+            var elevatorMaxFloors = builder.Configuration["ElevatorSettings:MaxFloors"]!;
 
             try
             {
@@ -38,7 +39,6 @@ namespace ElevatorConsole
             {
                 Console.WriteLine($"Failed to start the API. Please contact support : {ex.Message}");
             }
-
 
             Console.Clear();
             Console.WriteLine("Welcome to Super Mario's Elevator Simulator!");
@@ -66,7 +66,7 @@ namespace ElevatorConsole
 
             while (true) // or some condition to exit
             {
-                Console.WriteLine("Make an elevator request: Building floors ([1-10][U/D for an outside request])");
+                Console.WriteLine($"Make an elevator request: Building floors ([1-{elevatorMaxFloors}][U/D for an outside request])");
                 var request = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(request)) continue;
@@ -80,7 +80,10 @@ namespace ElevatorConsole
                         await Task.Delay(1000); // check every second after the Quit command
                         Console.Write(".");
                         if (processStatus != "InProgress")
+                        {
+                            await _loggingService!.LogEventAsync($"Elevator App exited by user request.");
                             Environment.Exit(0);
+                        }
                     }
                 }
 
@@ -128,7 +131,7 @@ namespace ElevatorConsole
                 //     continue;
                 // }
 
-                Console.WriteLine($"Your request: Floor {requestedFloor}, Desire Direction: {requestedDirection}," +
+                Console.WriteLine($"Your request: Floor {requestedFloor}, Desired Direction: {requestedDirection}," +
                     $"Request Type: {requestType}");
 
                 Console.WriteLine("Is this correct (Y/N)?");
