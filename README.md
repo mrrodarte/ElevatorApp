@@ -16,6 +16,7 @@ Elevator System Application that demonstrates basic elevator functionality using
   - It employs event-driven design, utilizing a dispatcher method (specifically for logging).
   - The app also illustrates the use of certain design patterns, such as singleton and factory method (occasionally introducing some complexity to demonstrate expertise).
   - A Minimal API approach with endpoint management and middleware error handling is also in place.
+  - The project includes unit testing (XUnit) of basic elevator operations located in the ElevatorSystem.Tests.
     
 # How to run our application
 The application relies on .NET7 run time for Windows Desktops and Core.  File are located in the publish folder or can be downloaded here:
