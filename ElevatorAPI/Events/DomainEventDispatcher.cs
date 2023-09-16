@@ -7,6 +7,9 @@ using ElevatorDomain.Interfaces;
 namespace ElevatorAPI.Events
 {
     //This class allows us to handle events from different event type handlers
+    //This is just another method of handling events, a pub / sub method would probably be a
+    //simpler approach.  But decided on this in the design phase and due to time constraints
+    //was not able to refactor.
     public class DomainEventDispatcher : IDomainEventDispatcher
     {
         private readonly IServiceProvider _serviceProvider;

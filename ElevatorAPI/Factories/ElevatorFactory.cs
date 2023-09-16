@@ -13,6 +13,9 @@ namespace ElevatorAPI.Factories
     //entity.  I did not feel it was the correct approach.  And took advantage of showing
     //a creational pattern the Factory Method, so that the ElevatorService would not depend of the
     //elevator but on a factory that will create it.
+    //Other reason is I needed a single elevator instance, and could have made the elevator a singleton class
+    //but entities are tracked by their unique id rather than instance.
+    //I could have also used an ElevatorSystem Aggregator that would manage the elevator entity. I opted for a factory method
     public class ElevatorFactory : IElevatorFactory
     {
         private readonly ElevatorSettings _settings;
