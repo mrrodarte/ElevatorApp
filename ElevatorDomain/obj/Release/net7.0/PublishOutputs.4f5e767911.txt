@@ -1,9 +1,0 @@
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\ElevatorDomain.dll
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\ElevatorDomain.deps.json
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\ElevatorDomain.pdb
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\Microsoft.Extensions.Logging.dll
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\Microsoft.Extensions.Options.dll
-C:\Users\mrrod\source\repos\ElevatorApp\ElevatorDomain\bin\Release\net7.0\publish\Microsoft.Extensions.Primitives.dll
