@@ -18,7 +18,7 @@ Elevator System Application that demonstrates basic elevator functionality using
   - A Minimal API approach with endpoint management and middleware error handling is also in place.
   - The project includes unit testing (XUnit) of basic elevator operations located in the ElevatorSystem.Tests.
     
-# How to run our application
+# How to run the Elevator application
 The application relies on .NET7 run time for Windows Desktops and Core.  File are located in the publish folder or can be downloaded here:
 - Windows Desktop .NET7 run time: https://download.visualstudio.microsoft.com/download/pr/2ce1cbbe-71d1-44e7-8e80-d9ae336b9b17/a2706bca3474eef8ef95e10a12ecc2a4/windowsdesktop-runtime-7.0.11-win-x64.exe
 - .NET Core runtime: https://download.visualstudio.microsoft.com/download/pr/56fbfa65-4bf5-40a0-8935-57f09ab3c76b/d80afe4b74d01c07ca74c4670fcfa1f8/aspnetcore-runtime-7.0.11-win-x64.exe
@@ -31,7 +31,7 @@ Make sure your computer has these runtimes in order to run the application.
     - LogFilePath: Specify the path where your elevator system will log operational data and any potential issues. Ensure the file adheres to the JSON syntax or retain the default settings.
     - ApiUrlHost:  This defines the API host that will listen to requests. The default can be kept, or if you have a preferred port, you can specify it. (Note: This demo uses only HTTP and not a secure protocol, intentionally keeping the application simple.)
 - Launch:
-  After finalizing your settings, initiate ElevatorConsole.exe. This is the entry point for our elevator application. Ensure you launch this and not elevatorAPI.exe. The ElevatorConsole will handle the startup of necessary modules for the elevator's operation.
+  After finalizing your settings, initiate `ElevatorConsole.exe`. This is the entry point for the elevator application. Ensure you launch this and not elevatorAPI.exe. The ElevatorConsole will handle the startup of necessary modules for the elevator's operation.
 
 # Operation
   - The application welcomes you and asks to enter your weight (for simplicity a constant weight will be assumed for all passengers)
@@ -39,13 +39,15 @@ Make sure your computer has these runtimes in order to run the application.
   - Input the floor from which you're making the call and your intended direction (e.g., 5U, 2D). Enter 'Q' to exit.
   - Valid entries for Outside Requests [floor number][Desired Direction]
   - Valid entries for Inside Requests  [floor number]
+  - You can only make Inside Requests when a passenger have boarded the elevator.
+  - If the elevator reaches its maximum weight capacity, only inside requests can be processed. Once passengers have disembarked and the elevator is no longer at maximum weight, it will then accommodate outside requests.
   - Examples:
           - 5U: An outside request from floor 5 intending to go up.
           - 3: An inside request to stop at floor 3. (Direction is contingent on the elevator's current trajectory.)
           - Upon calling the elevator, when it arrives at your floor, you will board automatically.
           - Subsequently, select your destination. Once the destination is reached, you will disembark automatically.
-    
-          NOTES:  Be informed that a queuing service manages the elevator requests. Immediate responses might not be possible if challenges arise in processing your request (e.g., surpassing the weight limit). Always review the logs for insights and potential troubleshooting.
 
-The application does not offer a console monitor to display the status of your request. Free file monitoring tools can be used to track your logfile, or you can simply open and refresh your log file after an operation to view the activities.
+    `NOTES:  Be informed that a queuing service manages the elevator requests. Immediate responses might not be possible if challenges arise in processing your request (e.g., surpassing the weight limit). Always review the logs for insights and potential troubleshooting.`
+
+The application does not offer a console monitor natively to display the status of your request.  But it tries to open an extra cmd window for monitoring operations, depending on your system this might not work and unfortunatelly you would have to rely on looking at the logfile at the end of the operations. You can also use free file monitoring tools that can be used to track your logfile in real-time.
   
